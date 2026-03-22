@@ -1,11 +1,212 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const allProjects = await getCollection('projects');
+const projects = allProjects
+  .filter((p: CollectionEntry<'projects'>) => p.data.featured)
+  .sort((a: CollectionEntry<'projects'>, b: CollectionEntry<'projects'>) => a.data.order - b.data.order);
 ---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Mobile Developer</title>
+    <meta name="description" content="Pixel-Perfect Mobile UIs converted from Figma to Flutter." />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased selection:bg-slate-200">
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 w-full bg-gray-50/80 backdrop-blur-md z-50 border-b border-gray-200/50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tight text-slate-900">Wattanachai Pummala</a>
+            
+            <nav class="hidden md:flex flex-row items-center gap-8 font-medium">
+                <a href="#works" class="text-slate-600 hover:text-slate-900 transition-colors duration-300">Works</a>
+                <a href="#skills" class="text-slate-600 hover:text-slate-900 transition-colors duration-300">Skills</a>
+                <a href="#resume" class="px-5 py-2.5 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-all duration-300 shadow-sm hover:shadow-md">Resume</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 text-slate-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
 
-<Layout>
-	<Welcome />
-</Layout>
+    <main class="pt-32 pb-16">
+        <!-- Hero Section -->
+        <section class="max-w-6xl mx-auto px-6 py-20 md:py-32">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+
+                <!-- Left: Text Content -->
+                <div class="flex-1 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+                        Building Beautiful <br />
+                        <span class="text-slate-400">Mobile Experiences</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-xl leading-relaxed">
+                        Hi, I'm a Mobile Developer passionate about transforming complex UI designs into smooth, responsive Flutter applications.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                        <a href="https://github.com/tonton-1" target="_blank" class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                            GitHub Profile
+                        </a>
+                        <a href="#works" class="w-full sm:w-auto px-8 py-3.5 bg-transparent border-2 border-slate-200 text-slate-800 rounded-full font-medium hover:border-slate-900 hover:text-slate-900 transition-all duration-300 flex items-center justify-center">
+                            View My Works
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Profile Photo -->
+                <div class="flex-shrink-0">
+                    <div class="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-gray-100 shadow-2xl">
+                        <img
+                            src="/images/profile.jpg"
+                            alt="Wattanachai Pummala"
+                            class="w-full h-full object-cover"
+                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-slate-100 flex flex-col items-center justify-center gap-2\'><svg class=\'w-16 h-16 text-slate-300\' fill=\'currentColor\' viewBox=\'0 0 24 24\'><path d=\'M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z\'/></svg><span class=\'text-xs text-slate-400 font-medium\'>Add profile.jpg</span></div>'"
+                        />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Selected Works -->
+        <section id="works" class="max-w-6xl mx-auto px-6 py-20 md:py-32">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-16 text-center md:text-left">Featured Mobile UIs</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-12">
+                {projects.map((project: CollectionEntry<'projects'>, index: number) => (
+                <div class={`group flex flex-col items-center md:items-start ${index === 1 ? 'lg:mt-24' : ''}`}>
+                    <!-- Phone Frame -->
+                    <div class="w-full max-w-[280px] sm:max-w-[300px] aspect-[1080/2400] rounded-[2rem] border-[10px] border-gray-800 shadow-xl overflow-hidden relative bg-zinc-900 transition-transform duration-500 group-hover:-translate-y-2">
+                        <!-- Punch Hole Camera -->
+                        <div class="absolute top-3 inset-x-0 flex justify-center z-10">
+                            <div class="w-4 h-4 bg-gray-900 rounded-full shadow-inner"></div>
+                        </div>
+                        <video src={project.data.video} autoplay loop muted playsinline class="object-cover object-top w-full h-full"></video>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="mt-8 text-center md:text-left w-full max-w-[350px]">
+                        <h3 class="text-2xl font-bold text-slate-900">{project.data.title}</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">
+                            {project.data.description}
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mt-5 justify-center md:justify-start">
+                            {project.data.tags.map((tag: string) => (
+                            <span class="px-3 py-1 text-xs font-semibold bg-gray-200 text-slate-700 rounded-full">{tag}</span>
+                            ))}
+                        </div>
+
+                        {project.data.github ? (
+                        <a href={project.data.github} target="_blank" class="inline-flex items-center gap-2 mt-6 font-semibold text-slate-800 hover:text-slate-500 transition-colors duration-300 group/link">
+                            <svg class="w-5 h-5 text-slate-700 group-hover/link:text-slate-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                            View Code on GitHub
+                        </a>
+                        ) : null}
+                    </div>
+                </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- Skills & Tools -->
+        <section id="skills" class="bg-white border-y border-gray-100 py-24 my-10">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-12">Skills &amp; Tools</h2>
+                <div class="flex flex-wrap justify-center gap-x-12 gap-y-10">
+
+                    <!-- Flutter -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <i class="devicon-flutter-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Flutter</span>
+                    </div>
+
+                    <!-- Dart -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <i class="devicon-dart-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Dart</span>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <i class="devicon-git-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Git</span>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <i class="devicon-github-original text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">GitHub</span>
+                    </div>
+
+                    <!-- Figma -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <i class="devicon-figma-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Figma</span>
+                    </div>
+
+                    <!-- VS Code -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <i class="devicon-vscode-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">VS Code</span>
+                    </div>
+
+                    <!-- Docker -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <i class="devicon-docker-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Docker</span>
+                    </div>
+
+                    <!-- Postman -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <i class="devicon-postman-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Postman</span>
+                    </div>
+
+                    <!-- RESTful APIs -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <svg class="w-12 h-12 text-slate-400 group-hover:text-slate-700 transition-all duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">RESTful APIs</span>
+                    </div>
+
+                    <!-- Responsive Design -->
+                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                        <svg class="w-12 h-12 text-slate-400 group-hover:text-slate-700 transition-all duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18h3" />
+                        </svg>
+                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Responsive UI</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-center">
+   
+        <div class="flex items-center gap-8">
+            <a href="mailto:wattanachaipum@gmail.com" class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors">Email</a>
+            
+            <a href="https://github.com/tonton-1" target="_blank" class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
