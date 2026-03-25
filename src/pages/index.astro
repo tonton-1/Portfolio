@@ -46,11 +46,11 @@ const projects = allProjects
                 <!-- Left: Text Content -->
                 <div class="flex-1 text-center md:text-left reveal">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
-                        Building Beautiful <br />
-                        <span class="text-slate-400">Mobile Experiences</span>
+                        Hello my name is<br />
+                        <span class="text-slate-400">Wattanachai Pummala</span>
                     </h1>
                     <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-xl leading-relaxed">
-                        Hi, I'm a Mobile Developer passionate about transforming complex UI designs into smooth, responsive Flutter applications.
+                        I'm a Mobile Developer passionate about transforming complex UI designs into smooth, responsive Flutter applications.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                         <a href="https://github.com/tonton-1" target="_blank" class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2">
@@ -83,7 +83,7 @@ const projects = allProjects
 
         <!-- Selected Works -->
         <section id="works" class="max-w-6xl mx-auto px-6 py-20 md:py-32">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-16 text-center md:text-left reveal">Featured Mobile UIs</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-16 text-center md:text-left reveal">Featured Projects</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-12">
                 {projects.map((project: CollectionEntry<'projects'>, index: number) => (
@@ -110,14 +110,25 @@ const projects = allProjects
                             ))}
                         </div>
 
-                        {project.data.github ? (
-                        <a href={project.data.github} target="_blank" class="inline-flex items-center gap-2 mt-6 font-semibold text-slate-800 hover:text-slate-500 transition-colors duration-300 group/link">
-                            <svg class="w-5 h-5 text-slate-700 group-hover/link:text-slate-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                            </svg>
-                            View Code on GitHub
-                        </a>
-                        ) : null}
+                        <div class="flex flex-wrap items-center gap-4 mt-6">
+                            {project.data.demo ? (
+                            <a href={project.data.demo} target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 bg-emerald-600 text-white text-sm font-semibold rounded-full hover:bg-emerald-700 transition-colors duration-300 shadow-sm hover:shadow-md group/demo">
+                                <svg class="w-4 h-4 text-emerald-100 group-hover/demo:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
+                                </svg>
+                                Try Live Demo
+                            </a>
+                            ) : null}
+
+                            {project.data.github ? (
+                            <a href={project.data.github} target="_blank" class="inline-flex items-center gap-2 font-semibold text-slate-800 hover:text-slate-500 transition-colors duration-300 group/link">
+                                <svg class="w-5 h-5 text-slate-700 group-hover/link:text-slate-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                                </svg>
+                                View Code
+                            </a>
+                            ) : null}
+                        </div>
                     </div>
                 </div>
                 ))}
@@ -126,72 +137,96 @@ const projects = allProjects
 
         <!-- Skills & Tools -->
         <section id="skills" class="bg-white border-y border-gray-100 py-24 my-10">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-slate-900 mb-12 reveal">Skills &amp; Tools</h2>
-                <div class="flex flex-wrap justify-center gap-x-12 gap-y-10">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-16 reveal">Skills & Tools</h2>
 
-                    <!-- Flutter -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <i class="devicon-flutter-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Flutter</span>
+                <div class="space-y-14">
+
+                    <!-- Mobile Development -->
+                    <div class="reveal">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-8">Mobile Development</p>
+                        <div class="flex flex-wrap justify-center gap-x-12 gap-y-8">
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-flutter-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Flutter</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-dart-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Dart</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-figma-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Figma</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <svg class="w-12 h-12 text-slate-400 group-hover:text-slate-700 transition-all duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18h3" />
+                                </svg>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Responsive UI</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Dart -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <i class="devicon-dart-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Dart</span>
+                    <!-- Divider -->
+                    <div class="border-t border-gray-100"></div>
+
+                    <!-- Backend & Database -->
+                    <div class="reveal reveal-delay-1">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-8">Backend & Database</p>
+                        <div class="flex flex-wrap justify-center gap-x-12 gap-y-8">
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-nodejs-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Node.js</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-mysql-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">MySQL</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-firebase-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Firebase</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <svg class="w-12 h-12 text-slate-400 group-hover:text-slate-700 transition-all duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                                </svg>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">RESTful APIs</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Git -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <i class="devicon-git-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Git</span>
-                    </div>
+                    <!-- Divider -->
+                    <div class="border-t border-gray-100"></div>
 
-                    <!-- GitHub -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <i class="devicon-github-original text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">GitHub</span>
-                    </div>
-
-                    <!-- Figma -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <i class="devicon-figma-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Figma</span>
-                    </div>
-
-                    <!-- VS Code -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <i class="devicon-vscode-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">VS Code</span>
-                    </div>
-
-                    <!-- Docker -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <i class="devicon-docker-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Docker</span>
-                    </div>
-
-                    <!-- Postman -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <i class="devicon-postman-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Postman</span>
-                    </div>
-
-                    <!-- RESTful APIs -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <svg class="w-12 h-12 text-slate-400 group-hover:text-slate-700 transition-all duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">RESTful APIs</span>
-                    </div>
-
-                    <!-- Responsive Design -->
-                    <div class="group flex flex-col items-center gap-2.5 cursor-default">
-                        <svg class="w-12 h-12 text-slate-400 group-hover:text-slate-700 transition-all duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18h3" />
-                        </svg>
-                        <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Responsive UI</span>
+                    <!-- Tools -->
+                    <div class="reveal reveal-delay-2">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-8">Tools & DevOps</p>
+                        <div class="flex flex-wrap justify-center gap-x-12 gap-y-8">
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-git-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Git</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-github-original text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">GitHub</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-docker-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Docker</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-postman-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Postman</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-vscode-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">VS Code</span>
+                            </div>
+                            <div class="group flex flex-col items-center gap-2.5 cursor-default">
+                                <i class="devicon-ubuntu-plain colored text-5xl transition-transform duration-300 group-hover:-translate-y-1"></i>
+                                <span class="text-sm font-medium text-slate-500 group-hover:text-slate-900 transition-colors duration-300">Ubuntu</span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -199,17 +234,53 @@ const projects = allProjects
         </section>
     </main>
 
+    <!-- Toast notification -->
+    <div id="copy-toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50">
+        ✓ Copied to clipboard!
+    </div>
+
     <!-- Footer -->
-    <footer id="contact" class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-center">
-   
-        <div class="flex items-center gap-8">
-            <a href="mailto:wattanachaipum@gmail.com" class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors">Email</a>
-            
-            <a href="https://github.com/tonton-1" target="_blank" class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors">GitHub</a>
+    <footer id="contact" class="border-t border-gray-100 py-16 mt-10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-sm font-medium text-slate-400 uppercase tracking-widest mb-4">Get in touch</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Let's connect.</h2>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+                <!-- Email copy button -->
+                <button id="copy-email-btn" class="group flex items-center gap-3 px-6 py-3 rounded-full border-2 border-slate-200 hover:border-slate-900 transition-all duration-300">
+                    <svg class="w-4 h-4 text-slate-400 group-hover:text-slate-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                    <span class="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">wattanachaipum@gmail.com</span>
+                    <svg class="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                    </svg>
+                </button>
+
+                <!-- GitHub link -->
+                <a href="https://github.com/tonton-1" target="_blank" class="group flex items-center gap-3 px-6 py-3 rounded-full border-2 border-slate-200 hover:border-slate-900 transition-all duration-300">
+                    <svg class="w-4 h-4 text-slate-400 group-hover:text-slate-700 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">github.com/tonton-1</span>
+                </a>
+
+            </div>
+
+            <p class="mt-12 text-xs text-slate-300">© {new Date().getFullYear()} Wattanachai Pummala</p>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-11 h-11 bg-slate-900 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-slate-700 hover:-translate-y-1 z-40">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
+
     <script>
+        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -220,6 +291,30 @@ const projects = allProjects
         }, { threshold: 0.12 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Copy email to clipboard
+        const copyBtn = document.getElementById('copy-email-btn');
+        const toast = document.getElementById('copy-toast');
+
+        copyBtn?.addEventListener('click', () => {
+            navigator.clipboard.writeText('wattanachaipum@gmail.com').then(() => {
+                if (!toast) return;
+                toast.style.opacity = '1';
+                setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+            });
+        });
+        // Back to top
+        const backToTop = document.getElementById('back-to-top') as HTMLElement | null;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                if (backToTop) { backToTop.style.opacity = '1'; backToTop.style.pointerEvents = 'auto'; }
+            } else {
+                if (backToTop) { backToTop.style.opacity = '0'; backToTop.style.pointerEvents = 'none'; }
+            }
+        });
+        backToTop?.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
