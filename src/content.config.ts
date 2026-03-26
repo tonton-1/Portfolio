@@ -6,7 +6,9 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    video: z.string(),
+    type: z.enum(['mobile', 'web']).default('mobile'),
+    video: z.string().optional(),
+    image: z.string().optional(),
     github: z.string().url().optional(),
     demo: z.string().url().optional(),
     tags: z.array(z.string()),
