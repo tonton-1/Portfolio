@@ -1,12 +1,12 @@
 ---
-title: "Restaurant Queue Manager (IoT web)"
-description: "A web-based queue calling system integrated with IoT via Firebase. Designed for restaurants to easily manage customer queues, featuring real-time syncing, a sleek dark-themed dashboard, and Thai language support."
+title: "IoT Queue Calling Web App"
+description: "I built a web-based restaurant queue management system that integrates with ESP32 IoT devices via Firebase Realtime Database. It features a POS-style menu for taking orders and a dashboard for calling queue buzzers."
 type: "web"
 video: "/images/queue.mp4"
 github: "https://github.com/tonton-1/queue-calling"
-tags: ["HTML", "C++", "Firebase", "IoT", "Web App"]
+tags: ["HTML/JS", "TailwindCSS", "Firebase", "C++ (ESP32)"]
 order: 4
 featured: true
 ---
 
-This project solves restaurant queue management by connecting a web dashboard with physical IoT buzzers or displays via Firebase. It allows staff to add current queue status and notify customers seamlessly. The web interface is fully customized for clarity and ease of use in a busy environment.
+This project connects a frontend web dashboard with physical IoT buzzer devices (ESP32). I developed the web interface using HTML, plain JavaScript, and TailwindCSS to create a responsive POS-like experience for adding orders and calling queues. Firebase Realtime Database is used as the bridge to trigger the physical devices instantly when a queue is called from the web.
