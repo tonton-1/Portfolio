@@ -4,7 +4,7 @@ description: "A web application for practicing past ONET (Ordinary National Educ
 video: "/images/555.mov"
 github: "https://github.com/tonton-1/exam-practice"
 demo: "https://tonton-1.github.io/exam-practice/"
-tags: ["Flutter", "Dart", "University Project"]
+tags: ["Flutter", "Dart"]
 order: 1
 featured: true
 ---
