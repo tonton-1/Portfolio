@@ -87,12 +87,7 @@ const certificates = [
                             </svg>
                             GitHub Profile
                         </a>
-                        <a href="mailto:wattanachaipum@gmail.com" class="w-full sm:w-auto px-8 py-3.5 bg-transparent border-2 border-slate-200 text-slate-800 rounded-full font-medium hover:border-slate-900 hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-2">
-                            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                            </svg>
-                            Send Email
-                        </a>
+                   
                         <a href="#works" class="w-full sm:w-auto px-8 py-3.5 bg-transparent border-2 border-slate-200 text-slate-800 rounded-full font-medium hover:border-slate-900 hover:text-slate-900 transition-all duration-300 flex items-center justify-center">
                             View My Works
                         </a>
@@ -445,6 +440,7 @@ const certificates = [
 
         // Copy email to clipboard
         const copyBtn = document.getElementById('copy-email-btn');
+        const heroCopyBtn = document.getElementById('hero-copy-email-btn');
         const toast = document.getElementById('copy-toast');
         
         const copyEmailAction = () => {
@@ -456,6 +452,7 @@ const certificates = [
         };
 
         copyBtn?.addEventListener('click', copyEmailAction);
+        heroCopyBtn?.addEventListener('click', copyEmailAction);
         // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
