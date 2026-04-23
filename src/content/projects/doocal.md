@@ -4,7 +4,7 @@ description: "A health application integrated with LINE Bot and LIFF, utilizing 
 type: "web"
 video: "images/doocalvideo.mp4"
 demo: "https://doocal-production.up.railway.app/"    
-tags: ["Node.js", "MySQL", "LINE API", "Gemini AI", "Docker"]
+tags: ["Node.js", "MySQL", "Messaging API"]
 order: 4
 featured: true
 ---
